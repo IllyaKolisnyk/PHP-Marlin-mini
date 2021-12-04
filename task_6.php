@@ -132,22 +132,7 @@
                                 ]
                         ];
                         foreach ($humans as $human):?>
-                            <?php if ($human['status'] == 'active'):?>
-                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                <img src="<?php echo $human['user_image'];?>" alt="<?php echo $human['user_name'];?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
-                                <div class="ml-2 mr-3">
-                                    <h5 class="m-0">
-                                        <?php echo $human['it_status'];?>
-                                        <small class="m-0 fw-300">
-                                            <?php echo $human['work'];?>
-                                        </small>
-                                    </h5>
-                                    <a href="<?php echo $human['twiter_link-href'];?>" class="text-info fs-sm" target="_blank"><?php echo $human['twiter_profile'];?></a> -
-                                    <a href="<?php echo $human['email_link-href'];?>" class="text-info fs-sm" target="_blank" title="Contact <?php echo $human['email_title-contact'];?>"><i class="fal fa-envelope"></i></a>
-                                </div>
-                            </div>
-                            <?php else:?>
-                                <div style="opacity: .4;" class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                                <div <?php echo($human['status'] == 'banned') ? 'style="opacity: .4;"' : ''?> class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                     <img src="<?php echo $human['user_image'];?>" alt="<?php echo $human['user_name'];?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                     <div class="ml-2 mr-3">
                                         <h5 class="m-0">
@@ -160,7 +145,6 @@
                                         <a href="<?php echo $human['email_link-href'];?>" class="text-info fs-sm" target="_blank" title="Contact <?php echo $human['email_title-contact'];?>"><i class="fal fa-envelope"></i></a>
                                     </div>
                                 </div>
-                            <?php endif;?>
                         <?php endforeach;?>
                         </div>
                         </div>
